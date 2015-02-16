@@ -107,5 +107,55 @@ var ModPE = {
 	 * @param {string} name Name for the new item.
 	 * @param {int} maxStack Maximum allowed quantity of this item in one stack.
 	 */
-	setFoodItem: function(id, iconName, halfHearts, iconSubIndex, name, maxStack) {}
+	setFoodItem: function(id, iconName, halfHearts, iconSubIndex, name, maxStack) {},
+
+	/**
+	 * Sets the point of view to another entity.
+	 * 
+	 * @param {int} entity Entity to set point of view to.
+	 */
+	setCamera: function(entity) {},
+
+	/** 
+	 * Changes the TPS (Ticks Per Second) in the game.
+	 * The default is 20, changing it higher will
+	 * accelerate the game, vice versa for setting it lower.
+	 *
+	 * @param {int} tps New TPS.
+	 */
+	setGameSpeed: function(tps) {},
+
+	/**
+	 * Creates a new item.
+	 * 
+	 * @param {int} id ID for the new item to be created.
+	 * @param {string} iconName Icon name for the new item.
+	 * @param {int} iconSubIndex Icon sub-index to use.
+	 * @param {string} name Name for the new item.
+	 * @param {int} maxStack Maximum allowed quantity of this item in one stack.
+	 */
+	setItem: function(id, iconName, iconSubIndex, name, maxStack) {},
+
+	/**
+	 * Sets the new items spritesheet.
+	 * 
+	 * @param {string} url URL to new spritesheet.
+	 */
+	setItems: function(url) {},
+
+	/**
+	 * Sets the terrain spritesheet.
+	 * 
+	 * @param {string} url URL to new spritesheet.
+	 */
+	setTerrain: function(url) {},
+
+	/**
+	 * Shows a new tip message.
+	 * It will fade unless you invoke it again.
+	 * It is what the game uses to show item name tooltips.
+	 * 
+	 * @param  {string} message Message to display.
+	 */
+	showTipMessage: function(message) {},
 };
