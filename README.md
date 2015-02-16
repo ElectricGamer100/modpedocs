@@ -1,2 +1,0 @@
-# modpedocs
-ModPE unofficial documentation.
