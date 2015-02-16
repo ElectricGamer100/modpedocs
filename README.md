@@ -1,5 +1,7 @@
 # What is this thing?
-ModPEDocs is the ModPE unofficial documentation.
+=======
+![Modpedocs build status](https://travis-ci.org/sliceofcode/modpedocs.svg)  
+It is modpedocs, the ModPE unofficial documentation.
 
 # How do I use this thing?
 All namespaces are listed to the right. Click/tap on one to
