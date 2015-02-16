@@ -158,4 +158,12 @@ var ModPE = {
 	 * @param  {string} message Message to display.
 	 */
 	showTipMessage: function(message) {},
+
+	/**
+	 * Takes a screenshot and saves it to <code>file</code>.
+	 * Say cheese!
+	 * 
+	 * @param  {string} file The filename of the new screenshot.
+	 */
+	takeScreenshot: function(file) {}
 };
