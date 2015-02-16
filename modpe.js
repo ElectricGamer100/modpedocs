@@ -167,3 +167,77 @@ var ModPE = {
 	 */
 	takeScreenshot: function(file) {}
 };
+
+/**
+ * Level namespace.
+ * Contains level-related functions.
+ * Do not construct. Access functions in a static manner,
+ * e.g <code>Level.&lt;function&gt;(&lt;params&gt;);</code>
+ * 
+ * @namespace Level
+ */
+var Level = {
+	/**
+	 * Destroys a block in the world, includes sound
+	 * and particles.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {boolean} drop Should drop block?
+	 */
+	destroyBlock: function(x, y, z, drop) {},
+
+	/**
+	 * Drops an item.
+	 * 
+	 * @param  {int} x X coordinate.
+	 * @param  {int} y Y coordinate.
+	 * @param  {int} z Z coordinate.
+	 * @param  {float} range How far away the item can spawn.
+	 * @param  {int} id Item/Block ID.
+	 * @param  {int} count Count of item/block.
+	 * @param  {int} damage Damage of item/block
+	 * @return {int} The item that dropped in entity form.
+	 */
+	dropItem: function(x, y, z, range, id, count, damage) {},
+
+	/**
+	 * KABOOM! Causes an explosion in the world.
+	 * 
+	 * @param  {int} x X coordinate.
+	 * @param  {int} y Y coordinate.
+	 * @param  {int} z Z cpordinate.
+	 * @param  {float} radius How big the explosion will be.
+	 */
+	explode: function(x, y, z, radius) {},
+
+	/**
+	 * Returns IP address of level?
+	 *
+	 * @return {string} IP address?
+	 */
+	getAddress: function() {},
+
+	/**
+	 * Returns the light level of a certain position
+	 * in the world.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @return {int} Light level
+	 */
+	getBrightness: function(x, y, z) {},
+
+	/**
+	 * Returns the ID of an item in a chest by slot.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} slot The slot index.
+	 * @return {int} The ID of the item in the slot.
+	 */
+	getChestSlot: function(x, y, z, slot) {}
+};
