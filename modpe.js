@@ -15,6 +15,8 @@ var ModPE = {
 	/**
 	 * Return the current version of Minecraft the user is using.
 	 * The version numbering of Minecraft is based on 3 numbers separated by a dot, for example "0.10.5".
+	 *
+	 * @return {string} The version of Minecraft the user is using in the form: int.int.int
 	 */
 	getMinecraftVersion: function() {},
 
@@ -196,6 +198,23 @@ var ModPE = {
  * @namespace Level
  */
 var Level = {
+
+	/**
+	 * Add a particle in the world in the desired position.
+	 * Based on ParticleType.java from BlockLauncher, the available particle types are: blockcrack 1; crit 2; smoke 3; cloud 4; flame 5; lava 6; redstone 8; itemcrack 9; snowballpoof 10; mobFlame 13; heart 14;
+	 * Particle types can also be accessed by writing <code>ParticleType.nameOfTheParticle</code>, for example "ParticleType.redstone".
+	 * 
+	 * @param  {int} particleType The particle type to add
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {float} x The speed of the particle on the X axis
+	 * @param  {float} y The speed of the particle on the Y axis
+	 * @param  {float} z The speed of the particle on the Z axis
+	 * @param  {int} size The size of the particle (not all particles support size)
+	 */
+	addParticle: function(particleType, x, y, z, velX, velY, velZ, size) {},
+
 	/**
 	 * Destroys a block in the world, includes sound
 	 * and particles.
