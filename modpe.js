@@ -78,6 +78,11 @@ var ModPE = {
 	removeData: function(key) {},
 
 	/** 
+	 * Resets the Field Of View of the player to the default value
+	 */
+	resetFov: function() {},
+
+	/** 
 	 * Resets any modified resources to the default ones
 	 * found in the currently applied texture pack.
 	 */
