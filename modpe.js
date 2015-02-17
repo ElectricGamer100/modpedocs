@@ -12,6 +12,12 @@
  */
 var ModPE = {
 
+	/**
+	 * Return the current version of Minecraft the user is using.
+	 * The version numbering of Minecraft is based on 3 numbers separated by a dot, for example "0.10.5".
+	 */
+	getMinecraftVersion: function() {},
+
 	/** 
 	 * Connects to and joins a new server.
 	 * 
@@ -24,6 +30,7 @@ var ModPE = {
 	 * Modifies the currently loaded language file.
 	 * Can be used to modify item names, user interface
 	 * text, etc.
+	 * All the Minecraft key names can be found in the "en_US.lang" file stored in the assets of the app inside tha "lang" folder.
 	 * 
 	 * @param  {string} key Name of the key in the language file.
 	 * @param  {string} value What to replace it with.
@@ -98,6 +105,13 @@ var ModPE = {
 	selectLevel: function(dir, name, seed, gamemode) {},
 
 	/**
+	 * Sets the point of view to another entity.
+	 * 
+	 * @param {int} entity Entity to set point of view to.
+	 */
+	setCamera: function(entity) {},
+
+	/**
 	 * Creates a new edible item.
 	 * 
 	 * @param {int} id ID for the new item to be created.
@@ -110,11 +124,11 @@ var ModPE = {
 	setFoodItem: function(id, iconName, halfHearts, iconSubIndex, name, maxStack) {},
 
 	/**
-	 * Sets the point of view to another entity.
+	 * Sets the Field Of View of the player.
 	 * 
-	 * @param {int} entity Entity to set point of view to.
+	 * @param {int} fov Field Of View to set to the player
 	 */
-	setCamera: function(entity) {},
+	setFov: function(fov) {},
 
 	/** 
 	 * Changes the TPS (Ticks Per Second) in the game.
