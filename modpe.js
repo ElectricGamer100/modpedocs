@@ -208,9 +208,9 @@ var Level = {
 	 * @param  {int} x X coordinate
 	 * @param  {int} y Y coordinate
 	 * @param  {int} z Z coordinate
-	 * @param  {float} x The speed of the particle on the X axis
-	 * @param  {float} y The speed of the particle on the Y axis
-	 * @param  {float} z The speed of the particle on the Z axis
+	 * @param  {float} velX The speed of the particle on the X axis
+	 * @param  {float} velY The speed of the particle on the Y axis
+	 * @param  {float} velZ The speed of the particle on the Z axis
 	 * @param  {int} size The size of the particle (not all particles support size)
 	 */
 	addParticle: function(particleType, x, y, z, velX, velY, velZ, size) {},
@@ -307,5 +307,26 @@ var Level = {
 	 * 
 	 * @return {int} The current game mode of the world the user is playing in
 	 */
-	getGameMode: function() {}
+	getGameMode: function() {},
+
+	/**
+	 * Returns the text of the selected line of the sign at a certain position in the world.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} line The line to read (must be in the range of 0 to 3)
+	 * @return {string} The line of text of the sign
+	 */
+	getSignText: function(x, y, z, line) {},
+
+	/**
+	 * Returns the ID of a block at a certain position
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @return {int} The ID of the block.
+	 */
+	getTile: function(x, y, z) {}
 };
