@@ -277,5 +277,35 @@ var Level = {
 	 * @param  {int} slot The slot index.
 	 * @return {int} The ID of the item in the slot.
 	 */
-	getChestSlot: function(x, y, z, slot) {}
+	getChestSlot: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the number of items in a chest by slot.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} slot The slot index.
+	 * @return {int} The numbers of items in the slot.
+	 */
+	getChestSlotCount: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the damage of an item in a chest by slot.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} slot The slot index.
+	 * @return {int} The damage of the item in the slot.
+	 */
+	getChestSlotData: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the current game mode of the world the user is playing in.
+	 * Game Mode 0 is Survival, Game Mode 1 is Creative.
+	 * 
+	 * @return {int} The current game mode of the world the user is playing in
+	 */
+	getGameMode: function() {}
 };
