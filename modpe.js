@@ -12,6 +12,14 @@
  */
 var ModPE = {
 
+	/**
+	 * Return the current version of Minecraft the user is using.
+	 * The version numbering of Minecraft is based on 3 numbers separated by a dot, for example "0.10.5".
+	 *
+	 * @return {string} The version of Minecraft the user is using in the form: int.int.int
+	 */
+	getMinecraftVersion: function() {},
+
 	/** 
 	 * Connects to and joins a new server.
 	 * 
@@ -24,6 +32,7 @@ var ModPE = {
 	 * Modifies the currently loaded language file.
 	 * Can be used to modify item names, user interface
 	 * text, etc.
+	 * All the Minecraft key names can be found in the "en_US.lang" file stored in the assets of the app inside tha "lang" folder.
 	 * 
 	 * @param  {string} key Name of the key in the language file.
 	 * @param  {string} value What to replace it with.
@@ -71,6 +80,11 @@ var ModPE = {
 	removeData: function(key) {},
 
 	/** 
+	 * Resets the Field Of View of the player to the default value
+	 */
+	resetFov: function() {},
+
+	/** 
 	 * Resets any modified resources to the default ones
 	 * found in the currently applied texture pack.
 	 */
@@ -98,6 +112,13 @@ var ModPE = {
 	selectLevel: function(dir, name, seed, gamemode) {},
 
 	/**
+	 * Sets the point of view to another entity.
+	 * 
+	 * @param {int} entity Entity to set point of view to.
+	 */
+	setCamera: function(entity) {},
+
+	/**
 	 * Creates a new edible item.
 	 * 
 	 * @param {int} id ID for the new item to be created.
@@ -110,11 +131,11 @@ var ModPE = {
 	setFoodItem: function(id, iconName, halfHearts, iconSubIndex, name, maxStack) {},
 
 	/**
-	 * Sets the point of view to another entity.
+	 * Sets the Field Of View of the player.
 	 * 
-	 * @param {int} entity Entity to set point of view to.
+	 * @param {int} fov Field Of View to set to the player
 	 */
-	setCamera: function(entity) {},
+	setFov: function(fov) {},
 
 	/** 
 	 * Changes the TPS (Ticks Per Second) in the game.
@@ -177,6 +198,23 @@ var ModPE = {
  * @namespace Level
  */
 var Level = {
+
+	/**
+	 * Add a particle in the world in the desired position.
+	 * Based on ParticleType.java from BlockLauncher, the available particle types are: blockcrack 1; crit 2; smoke 3; cloud 4; flame 5; lava 6; redstone 8; itemcrack 9; snowballpoof 10; mobFlame 13; heart 14;
+	 * Particle types can also be accessed by writing <code>ParticleType.nameOfTheParticle</code>, for example "ParticleType.redstone".
+	 * 
+	 * @param  {int} particleType The particle type to add
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {float} velX The speed of the particle on the X axis
+	 * @param  {float} velY The speed of the particle on the Y axis
+	 * @param  {float} velZ The speed of the particle on the Z axis
+	 * @param  {int} size The size of the particle (not all particles support size)
+	 */
+	addParticle: function(particleType, x, y, z, velX, velY, velZ, size) {},
+
 	/**
 	 * Destroys a block in the world, includes sound
 	 * and particles.
@@ -239,5 +277,56 @@ var Level = {
 	 * @param  {int} slot The slot index.
 	 * @return {int} The ID of the item in the slot.
 	 */
-	getChestSlot: function(x, y, z, slot) {}
+	getChestSlot: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the number of items in a chest by slot.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} slot The slot index.
+	 * @return {int} The numbers of items in the slot.
+	 */
+	getChestSlotCount: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the damage of an item in a chest by slot.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} slot The slot index.
+	 * @return {int} The damage of the item in the slot.
+	 */
+	getChestSlotData: function(x, y, z, slot) {},
+
+	/**
+	 * Returns the current game mode of the world the user is playing in.
+	 * Game Mode 0 is Survival, Game Mode 1 is Creative.
+	 * 
+	 * @return {int} The current game mode of the world the user is playing in
+	 */
+	getGameMode: function() {},
+
+	/**
+	 * Returns the text of the selected line of the sign at a certain position in the world.
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @param  {int} line The line to read (must be in the range of 0 to 3)
+	 * @return {string} The line of text of the sign
+	 */
+	getSignText: function(x, y, z, line) {},
+
+	/**
+	 * Returns the ID of a block at a certain position
+	 * 
+	 * @param  {int} x X coordinate
+	 * @param  {int} y Y coordinate
+	 * @param  {int} z Z coordinate
+	 * @return {int} The ID of the block.
+	 */
+	getTile: function(x, y, z) {}
 };
