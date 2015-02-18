@@ -20,14 +20,6 @@ var ModPE = {
 	 */
 	getMinecraftVersion: function() {},
 
-	/** 
-	 * Connects to and joins a new server.
-	 * 
-	 * @param  {string} address The IP address to connect to.
-	 * @param  {int} port The port to use.
-	 */
-	joinServer: function(address, port) {},
-
 	/**
 	 * Modifies the currently loaded language file.
 	 * Can be used to modify item names, user interface
