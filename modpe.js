@@ -322,3 +322,15 @@ var Level = {
 	 */
 	getTile: function(x, y, z) {}
 };
+
+/**
+*Entity namespace.
+*Contains entity-related functions.
+*Do not construct. Access functions in a static manner.
+*
+*@namespace level
+*/
+
+Var Entity {
+I'll continue later.
+}
